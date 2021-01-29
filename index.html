@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    section
+    {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+    }
+    section .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('./bg.jpg');
+        background-size: cover;
+        z-index: -1;
+        filter: blur(0px);
+        transition: 1.5s;
+    }
+    section .gun{
+        position: absolute;
+        filter: blur(8px);
+        top: 43%;
+        transition: 1.5s;
+    }
+    .gun:hover
+    {
+        filter: blur(0px);
+        transform: scale(1.5) rotateZ(10deg);
+
+    }
+
+   .gun:hover ~ .bg{
+       filter: blur(8px);
+       transform: scale(2);
+   }
+   @media screen and (max-width: 450px)
+   {
+    section .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: url('./bg.jpg');
+        z-index: -1;
+        filter: blur(0px);
+        transition: 1.5s;
+    }
+    section .gun{
+        position: absolute;
+        filter: blur(8px);
+        height: 250px;
+        top: 65%;
+        transition: 1.5s;
+
+    }
+    .gun:hover
+    {
+        filter: blur(0px);
+        transform: scale(3) rotateZ(5deg) translateX(-40px);
+
+    }
+
+   }
+
+</style>
+
+</head>
+<body>
+   <section>
+        <img src="./gun.png" class="gun">
+ <div class="bg"></div>
+   
+</section>  
+    
+</body>
+
+</html>
